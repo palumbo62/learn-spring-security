@@ -1,0 +1,19 @@
+package com.baeldung.lss.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.baeldung.lss.web.model.User;
+
+@Controller
+public class RegistrationController {
+
+    // RLP added this controller to support the new registration page
+    @RequestMapping(value = "signup")
+    public ModelAndView registrationForm() {
+        return new ModelAndView("registrationPage", "user", new User());
+    }
+
+
+}
